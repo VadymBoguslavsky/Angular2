@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   token_auth_config: {
-    apiBase: 'https://cadymapi.herokuapp.com'
+    apiBase: 'http://localhost:3000'
   }
 };
