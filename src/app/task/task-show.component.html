@@ -1,0 +1,80 @@
+<div *ngIf="task">
+   <h5>Task title "{{task.title}}"</h5>
+  <h5>
+    Task id "{{task.id}}"
+  </h5>
+  <h5>
+    Task description "{{task.description}}"
+  </h5>
+  <h5>
+    Task date "{{task.due_date | date:'mediumDate' }}"
+  </h5>
+  <h5>
+    Task priority "{{task.priority}}"
+  </h5>
+
+
+  <button type="button" (click)="update(task)" class="btn btn-primary">Edit Task</button>
+  <button type="button" (click)="delete(task)" class="btn btn-primary">Delete</button>
+
+  <div class="row" [hidden]="!editBtnClicked">
+    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      <form #taskForm='ngForm'>
+        <div class="form-group">
+          <label for="title">
+            <h4>Task Title</h4>
+          </label>
+          <input type="text" class="form-controle" id="title"
+                 required
+                 name="title"
+                 placeholder="Task Title"
+                 #title='ngModel'
+                 [(ngModel)]='task.title'>
+          <div [hidden]='title.valid || title.pristine'
+               class="alert alert-danger">
+            Title is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">
+            <h4>Describe your task</h4>
+          </label>
+          <textarea class="form-control"
+                    id="description"
+                    required
+                    name="description"
+                    cols="30" rows="10"
+                    #description='ngModel'
+                    [(ngModel)]='task.description'>
+        </textarea>
+          <div [hidden]='description.valid || description.pristine'
+               class="alert alert-danger">
+            Description is required
+          </div>
+          <label for="priority">
+            <h4>Priority of your task</h4>
+          </label>
+          <input type="number" class="form-controle"
+                 id="priority"
+                 required
+                 name="priority"
+                 placeholder="Task priority"
+                 #priority='ngModel'
+                 [(ngModel)]='task.priority'>
+          <label for="due_date">
+            <h4>Inspiration date of your task</h4>
+          </label>
+          <input type="date" class="form-controle" id="due_date"
+                 required
+                 name="due_date"
+                 placeholder="Task date"
+                 #due_date='ngModel'
+                 [(ngModel)]='task.due_date'>
+        </div>
+        <button type="submit" (click)="update(task); onUpdateClicked()" class="btn btn-primary"
+                [disabled]="!taskForm.form.valid">Update task
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

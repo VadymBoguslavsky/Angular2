@@ -1,0 +1,16 @@
+<div class="ui four stackable cards">
+  <div class="card" *ngFor="let task of tasks">
+    <a (click)="goToShow(task)">
+      <div class="card-block">
+        <h3 class="card-title">
+          {{task.title}}
+        </h3>
+        <p>
+          <small>Last updated: {{task.updated_at | date:'medium'}}</small>
+        </p>
+        <p class="card-text">{{task.description}}</p>
+        <a class="btn btn-primary">View Task</a>
+      </div>
+    </a>
+  </div>
+</div>
