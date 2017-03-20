@@ -17,7 +17,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import {AuthService} from "./services/auth.service";
-import { DatepickerModule } from 'angular2-material-datepicker'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,7 @@ import { DatepickerModule } from 'angular2-material-datepicker'
     HttpModule,
     AppRoutingModule,
     MaterializeModule,
-    DatepickerModule
+
   ],
   providers: [ Angular2TokenService,TaskService,AuthService ],
   bootstrap: [AppComponent]
