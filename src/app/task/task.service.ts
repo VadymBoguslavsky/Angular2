@@ -8,7 +8,7 @@ import {Task} from "./task";
 export class TaskService {
   headers: Headers;
   options: RequestOptions;
-  private tasksUrl = 'https://cadymapi.herokuapp.com/tasks';
+  private tasksUrl = 'http://localhost:3000';
 
   constructor(private http: Http) {
     this.headers = new Headers({'Content-Type': 'application/json'});
