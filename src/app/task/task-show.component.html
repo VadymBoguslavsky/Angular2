@@ -7,11 +7,12 @@
     Task description "{{task.description}}"
   </h5>
   <h5>
-    Task date "{{task.due_date | date:'mediumDate' }}"
-  </h5>
-  <h5>
     Task priority "{{task.priority}}"
   </h5>
+  <h5>
+    Task date "{{task.due_date | date:'mediumDate' }}"
+  </h5>
+
 
 
   <button type="button" (click)="update(task)" class="btn btn-primary">Edit Task</button>
