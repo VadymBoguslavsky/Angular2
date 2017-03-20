@@ -8,7 +8,7 @@ import {Task} from "./task";
 export class TaskService {
   headers: Headers;
   options: RequestOptions;
-  private tasksUrl = 'http://localhost:3000/tasks';
+  private tasksUrl = 'https://secure-lowlands-66287.herokuapp.com/tasks';
 
   constructor(private http: Http) {
     this.headers = new Headers({'Content-Type': 'application/json'});
